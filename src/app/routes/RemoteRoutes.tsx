@@ -15,7 +15,7 @@ const RemoteLayout = () => (
 );
 
 /**
- * One route tree for every mode. Relative paths only: integrated → under the host's `tasks/*`,
+ * One route tree for every mode. Relative paths only: integrated → under the host's `<name>/*` route,
  * standalone → own data router at `/`, bridge → own data router with `platform.bridge.basename`.
  */
 export const RemoteRoutes = () => (

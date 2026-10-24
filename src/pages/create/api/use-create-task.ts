@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router';
-import { DEFAULT_TASK_FILTERS, taskSchema, tasksKeys, tasksListOptions, useTasksHttp } from '@/shared/api';
+import { DEFAULT_TASK_FILTERS, taskSchema, tasksKeys, tasksListOptions, useRemoteHttp } from '@/shared/api';
 import type { CreateTaskInput } from '@/shared/api';
 import { addTaskToList } from '../model/add-task-to-list';
 
@@ -9,7 +9,7 @@ import { addTaskToList } from '../model/add-task-to-list';
  * do not wait for invalidation. The mutation stays pending until navigation finishes (await navigate).
  */
 export const useCreateTask = () => {
-  const http = useTasksHttp();
+  const http = useRemoteHttp();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 

@@ -8,7 +8,7 @@ import { fakeTasksFetch } from './fake-backend';
 let cached: { platform: PlatformContract; http: HttpClient } | null = null;
 
 /** The remote builds its own client from `platform.auth` + its own BFF address (the host does not know it). */
-const getTasksHttp = (platform: PlatformContract, config: RemoteEnvConfig): HttpClient => {
+const getRemoteHttp = (platform: PlatformContract, config: RemoteEnvConfig): HttpClient => {
   if (cached?.platform !== platform) {
     cached = {
       platform,
@@ -24,4 +24,4 @@ const getTasksHttp = (platform: PlatformContract, config: RemoteEnvConfig): Http
   return cached.http;
 };
 
-export const useTasksHttp = (): HttpClient => getTasksHttp(usePlatform(), useRemoteEnvConfig());
+export const useRemoteHttp = (): HttpClient => getRemoteHttp(usePlatform(), useRemoteEnvConfig());

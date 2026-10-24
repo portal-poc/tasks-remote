@@ -36,7 +36,7 @@ const getRemoteEnvConfig = async (envName: string): Promise<RemoteEnvConfig> => 
   const config = await loadRemoteConfig();
   const envConfig = config.environments[envName];
   if (!envConfig) {
-    throw new Error(`tasks: no runtime config for environment "${envName}"`);
+    throw new Error(`${REMOTE_NAME}: no runtime config for environment "${envName}"`);
   }
   return envConfig;
 };

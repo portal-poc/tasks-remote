@@ -1,7 +1,7 @@
 import type { PlatformContract } from '@portal/platform-contract';
 
 /**
- * Reserved expose (section 13). Future: `getRemoteQueryClient(platform).prefetchQuery(tasksListOptions(...))`.
+ * Reserved expose (section 13). Future: `getRemoteQueryClient(platform).prefetchQuery(<listOptions>(...))`.
  * Must stay tiny (query-client, queryOptions factories, http client) and share ONE query-client module with RemoteRoot.
  */
 // TODO(decision): implement when preload is scheduled; the name is already verified by `portal-cli verify`.

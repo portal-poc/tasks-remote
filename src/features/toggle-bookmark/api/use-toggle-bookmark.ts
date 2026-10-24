@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { z } from 'zod';
 import { usePlatformEvents } from '@portal/platform-runtime';
-import { taskDetailsOptions, tasksKeys, useTasksHttp } from '@/shared/api';
+import { taskDetailsOptions, tasksKeys, useRemoteHttp } from '@/shared/api';
 import type { Task } from '@/shared/api';
 import { REMOTE_NAME } from '@/shared/config';
 
@@ -11,7 +11,7 @@ const setBookmarked = (taskId: string, bookmarked: boolean) => (task: Task) =>
   task.id === taskId ? { ...task, bookmarked } : task;
 
 export const useToggleBookmark = () => {
-  const http = useTasksHttp();
+  const http = useRemoteHttp();
   const queryClient = useQueryClient();
   const events = usePlatformEvents();
 
