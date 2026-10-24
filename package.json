@@ -13,7 +13,7 @@
     "test": "vitest run",
     "verify": "portal-cli verify && portal-cli verify --dist dist-bridge --mode bridge",
     "analyze": "fallow",
-    "release:uat": "pnpm build && pnpm verify && portal-cli publish --nexus-dir ../../.infra/nexus && portal-cli release --stand uat --registry ../../registry && portal-cli registry build --stand uat --registry ../../registry --out ../../.infra/stands/uat/config.json"
+    "release:uat": "pnpm build && pnpm verify && portal-cli publish && portal-cli release --stand uat --pr"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -21,9 +21,9 @@
     "@hookform/resolvers": "^6.0.0",
     "@module-federation/bridge-react": "^2.9.2",
     "@mui/joy": "5.0.0-beta.52",
-    "@portal-poc/ds": "workspace:^",
-    "@portal-poc/platform-contract": "workspace:^",
-    "@portal-poc/platform-runtime": "workspace:^",
+    "@portal-poc/ds": "^1.0.0",
+    "@portal-poc/platform-contract": "^1.0.0",
+    "@portal-poc/platform-runtime": "^1.0.0",
     "@tanstack/react-query": "^5.104.5",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
@@ -35,9 +35,9 @@
     "@babel/core": "^8.0.9",
     "@feature-sliced/steiger-plugin": "^0.8.0",
     "@module-federation/vite": "^1.23.5",
-    "@portal-poc/cli": "workspace:^",
-    "@portal-poc/presets": "workspace:^",
-    "@portal-poc/vite-config": "workspace:^",
+    "@portal-poc/cli": "^1.0.0",
+    "@portal-poc/presets": "^1.0.0",
+    "@portal-poc/vite-config": "^1.0.0",
     "@rolldown/plugin-babel": "^0.2.4",
     "@testing-library/react": "^16.3.3",
     "@types/node": "^26.6.5",
@@ -52,5 +52,9 @@
     "typescript": "^7.0.2",
     "vite": "^8.3.5",
     "vitest": "^5.0.5"
+  },
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=24.19.0"
   }
 }
