@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "vite --port 5174 --strictPort",
     "dev:standalone": "vite --port 5174 --strictPort --open",
-    "build": "vite build",
+    "build": "vite build && vite build --mode bridge",
     "preview": "vite preview --port 5174 --strictPort",
     "typecheck": "tsc -p tsconfig.json",
     "lint": "oxlint . && steiger ./src && fallow dead-code",
     "test": "vitest run",
-    "verify": "portal-cli verify",
+    "verify": "portal-cli verify && portal-cli verify --dist dist-bridge --mode bridge",
     "analyze": "fallow"
   },
   "dependencies": {
