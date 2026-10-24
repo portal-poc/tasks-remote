@@ -1,0 +1,12 @@
+{
+  "environments": {
+    "local": {
+      "bffBaseUrl": "https://tasks-bff.local/api",
+      "scopes": ["api://tasks-bff/Tasks.ReadWrite"]
+    },
+    "dev": {
+      "bffBaseUrl": "https://tasks-bff.dev.bank.example/api",
+      "scopes": ["api://tasks-bff/Tasks.ReadWrite"]
+    }
+  }
+}
