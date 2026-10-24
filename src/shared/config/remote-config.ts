@@ -32,7 +32,7 @@ const loadRemoteConfig = () => {
   return configPromise;
 };
 
-export const getRemoteEnvConfig = async (envName: string): Promise<RemoteEnvConfig> => {
+const getRemoteEnvConfig = async (envName: string): Promise<RemoteEnvConfig> => {
   const config = await loadRemoteConfig();
   const envConfig = config.environments[envName];
   if (!envConfig) {

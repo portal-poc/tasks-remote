@@ -9,9 +9,10 @@
     "build": "vite build",
     "preview": "vite preview --port 5174 --strictPort",
     "typecheck": "tsc -p tsconfig.json",
-    "lint": "oxlint . && steiger ./src",
+    "lint": "oxlint . && steiger ./src && fallow dead-code",
     "test": "vitest run",
-    "verify": "portal-cli verify"
+    "verify": "portal-cli verify",
+    "analyze": "fallow"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -46,6 +47,7 @@
     "steiger": "^0.8.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.5",
-    "vitest": "^5.0.5"
+    "vitest": "^5.0.5",
+    "fallow": "^3.35.0"
   }
 }

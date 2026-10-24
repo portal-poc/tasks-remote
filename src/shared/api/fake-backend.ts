@@ -7,7 +7,7 @@ import type { CreateTaskInput, Task } from './contracts';
  */
 type StoredTask = Omit<Task, 'bookmarked'>;
 
-export type StoredBookmark = { taskId: string; title: string; path: string };
+type StoredBookmark = { taskId: string; title: string; path: string };
 
 const DELAY_KEY = 'portal.mock.delayMs';
 const BOOKMARKS_KEY = 'portal.mock.bookmarks';
@@ -41,7 +41,7 @@ const readUserId = (authorization: string | null): string | null => {
 
 const bookmarksKey = (userId: string) => `${BOOKMARKS_KEY}.${userId}`;
 
-export const readBookmarks = (userId: string): StoredBookmark[] => {
+const readBookmarks = (userId: string): StoredBookmark[] => {
   try {
     const parsed: unknown = JSON.parse(localStorage.getItem(bookmarksKey(userId)) ?? '[]');
     return Array.isArray(parsed) ? (parsed as StoredBookmark[]) : [];

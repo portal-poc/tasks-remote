@@ -4,7 +4,7 @@ import { z } from 'zod';
  * The single place where tasks-bff types/schemas live. Today: hand-written. Later: re-export from the backend's
  * generated package (`@portal-api/tasks-bff`) — only this file changes.
  */
-export const taskStatusSchema = z.enum(['todo', 'in-progress', 'done']);
+const taskStatusSchema = z.enum(['todo', 'in-progress', 'done']);
 
 export const taskSchema = z.object({
   id: z.string(),
