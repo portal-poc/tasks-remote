@@ -27,7 +27,9 @@ pnpm dev:standalone     # :5174 — standalone app with mock platform
 ```sh
 export PORTAL_NEXUS_DIR=~/projects/portal-poc/platform/.infra/nexus   # artifact store (Nexus stand-in)
 export PORTAL_REGISTRY_DIR=~/projects/portal-poc/registry             # clone of the registry repository
-pnpm release:uat   # build → verify → publish immutable version → PR to the registry (gate against the uat host)
+PORTAL_APP_VERSION=1.4.1 pnpm release   # build → verify → publish → PR to the stands following this line
 ```
 
-Merge the registry PR, then deploy the stand config from the registry repository (`pnpm deploy:uat`).
+CI does the same (`app-ci.yml`): a `vX.Y.Z` tag on `release/X.Y` or a merge to `develop` (`X.Y.Z-dev.N`). Which
+stands get it is decided by the registry's `stands.json` (see platform `docs/branching.md`). Merge the registry PR,
+then deploy the stand configs from the registry repository (`pnpm deploy`).

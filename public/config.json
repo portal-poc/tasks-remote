@@ -6,14 +6,26 @@
         "api://tasks-bff/Tasks.ReadWrite"
       ]
     },
-    "uat": {
-      "bffBaseUrl": "https://tasks-bff.uat.bank.example/api",
+    "dev3": {
+      "bffBaseUrl": "https://tasks-bff.dev3.bank.example/api",
       "scopes": [
         "api://tasks-bff/Tasks.ReadWrite"
       ]
     },
-    "prod": {
-      "bffBaseUrl": "https://tasks-bff.bank.example/api",
+    "dev2": {
+      "bffBaseUrl": "https://tasks-bff.dev2.bank.example/api",
+      "scopes": [
+        "api://tasks-bff/Tasks.ReadWrite"
+      ]
+    },
+    "dev1": {
+      "bffBaseUrl": "https://tasks-bff.dev1.bank.example/api",
+      "scopes": [
+        "api://tasks-bff/Tasks.ReadWrite"
+      ]
+    },
+    "tst": {
+      "bffBaseUrl": "https://tasks-bff.tst.bank.example/api",
       "scopes": [
         "api://tasks-bff/Tasks.ReadWrite"
       ]

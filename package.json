@@ -13,7 +13,7 @@
     "test": "vitest run",
     "verify": "portal-cli verify && portal-cli verify --dist dist-bridge --mode bridge",
     "analyze": "fallow",
-    "release:uat": "pnpm build && pnpm verify && portal-cli publish && portal-cli release --stand uat --pr"
+    "release": "pnpm build && pnpm verify && portal-cli publish && portal-cli release --auto --pr"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -35,9 +35,9 @@
     "@babel/core": "^8.0.9",
     "@feature-sliced/steiger-plugin": "^0.8.0",
     "@module-federation/vite": "^1.23.5",
-    "@portal-poc/cli": "^1.0.0",
+    "@portal-poc/cli": "^1.1.0",
     "@portal-poc/presets": "^1.0.0",
-    "@portal-poc/vite-config": "^1.0.0",
+    "@portal-poc/vite-config": "^1.1.0",
     "@rolldown/plugin-babel": "^0.2.4",
     "@testing-library/react": "^16.3.3",
     "@types/node": "^26.6.5",

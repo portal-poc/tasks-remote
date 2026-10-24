@@ -219,14 +219,14 @@ importers:
         specifier: ^1.23.5
         version: 1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5))
       '@portal-poc/cli':
-        specifier: ^1.0.0
-        version: 1.0.0(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(@types/node@26.6.5)(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))
+        specifier: ^1.1.0
+        version: 1.1.0(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(@types/node@26.6.5)(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))
       '@portal-poc/presets':
         specifier: ^1.0.0
         version: 1.0.0(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))
       '@portal-poc/vite-config':
-        specifier: ^1.0.0
-        version: 1.0.0(@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)))(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))
+        specifier: ^1.1.0
+        version: 1.1.0(@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)))(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))
       '@rolldown/plugin-babel':
         specifier: ^0.2.4
         version: 0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5))
@@ -1081,8 +1081,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@portal-poc/cli@1.0.0':
-    resolution: {integrity: sha512-kLBIsJIHfQDHIx8jnchiVaIIg2vmFXFm6R3yhEglzZBbquTSnHe/yiaceIEOGIIt28pmuO7HLfpM1Gyrw5VXqw==, tarball: https://npm.pkg.github.com/download/@portal-poc/cli/1.0.0/358e179aeb00c6acd63b5734c8c02e31aba31137}
+  '@portal-poc/cli@1.1.0':
+    resolution: {integrity: sha512-2scQew8dkffJaj7rkEd4pmT0+wmSYeLusapWkezPfdy5zUPMvXMV/YVsFXgI8AgTD2DTNQeO416eORNNZRjA2Q==, tarball: https://npm.pkg.github.com/download/@portal-poc/cli/1.1.0/1ea7cd91d125ab15a84b3bb4436ca3f5a07d78ae}
     hasBin: true
 
   '@portal-poc/ds@1.0.2':
@@ -1117,8 +1117,16 @@ packages:
       steiger: ^0.8.0
       vitest: ^5.0.0
 
-  '@portal-poc/vite-config@1.0.0':
-    resolution: {integrity: sha512-3NmZnVIp+fM+j8vJj/1VDTkMqfEFNyxAX2LDlR9bhozrIpJ6eAstdEx/S5zGivmHEVCummT+XJc3vUqmdN8PqQ==, tarball: https://npm.pkg.github.com/download/@portal-poc/vite-config/1.0.0/2df707e9d8ebaeb04c8ee47a8b32764395e0c7da}
+  '@portal-poc/presets@1.0.1':
+    resolution: {integrity: sha512-4LAr1/He3x7zBhAUEfXHXR8ZLwxejIS0KTCAPnGpeMAZQJjFqTfSWQyZ0gW6fglvvuae87KNobMGlXDYUqEgWA==, tarball: https://npm.pkg.github.com/download/@portal-poc/presets/1.0.1/88e6c131c89181faf61b774d4d1692ef9a81444e}
+    peerDependencies:
+      '@feature-sliced/steiger-plugin': ^0.8.0
+      fallow: ^3.35.0
+      steiger: ^0.8.0
+      vitest: ^5.0.0
+
+  '@portal-poc/vite-config@1.1.0':
+    resolution: {integrity: sha512-DH2/hOtH11iggkco5HPkfUX+ZCVBAusYKL/TgBVWeVMKIf1IDzYJcKJobtNaVibSK0Jq/VN5Cb8HRHNkaKZ7ww==, tarball: https://npm.pkg.github.com/download/@portal-poc/vite-config/1.1.0/e2cfaae3ce90f8f056975f5ba6847e7fafd824ae}
     peerDependencies:
       '@module-federation/vite': ~1.23.5
       '@rolldown/plugin-babel': ^0.2.4
@@ -3277,11 +3285,11 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@portal-poc/cli@1.0.0(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(@types/node@26.6.5)(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))':
+  '@portal-poc/cli@1.1.0(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(@types/node@26.6.5)(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))':
     dependencies:
       '@inquirer/prompts': 8.7.4(@types/node@26.6.5)
       '@portal-poc/mf-shared': 1.0.0
-      '@portal-poc/presets': 1.0.0(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))
+      '@portal-poc/presets': 1.0.1(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))
       commander: 15.0.0
       semver: 7.8.5
     transitivePeerDependencies:
@@ -3328,7 +3336,14 @@ snapshots:
       steiger: 0.8.0(typescript@7.0.2)
       vitest: 5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5))
 
-  '@portal-poc/vite-config@1.0.0(@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)))(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))':
+  '@portal-poc/presets@1.0.1(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))':
+    dependencies:
+      '@feature-sliced/steiger-plugin': 0.8.0(typescript@7.0.2)
+      fallow: 3.35.0
+      steiger: 0.8.0(typescript@7.0.2)
+      vitest: 5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5))
+
+  '@portal-poc/vite-config@1.1.0(@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)))(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))':
     dependencies:
       '@module-federation/vite': 1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5))
       '@portal-poc/mf-shared': 1.0.0
