@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button, Typography } from '@portal/ds';
-import { usePlatformAuth } from '@portal/platform-runtime';
+import { Button, Typography } from '@portal-poc/ds';
+import { usePlatformAuth } from '@portal-poc/platform-runtime';
 
 const FOREIGN_SCOPE = 'api://host-bff/Host.Admin';
 

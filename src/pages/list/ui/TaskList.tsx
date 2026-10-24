@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { useDeferredValue, ViewTransition } from 'react';
 import { Link as RouterLink } from 'react-router';
-import { Chip, Link, List, ListItem, Typography } from '@portal/ds';
+import { Chip, Link, List, ListItem, Typography } from '@portal-poc/ds';
 import { BookmarkToggle } from '@/features/toggle-bookmark';
 import { tasksListOptions, useRemoteHttp } from '@/shared/api';
 import type { TaskFilters } from '@/shared/api';

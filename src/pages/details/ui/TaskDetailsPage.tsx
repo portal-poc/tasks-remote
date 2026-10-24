@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { Activity, useState, ViewTransition } from 'react';
 import { Link as RouterLink, useParams } from 'react-router';
-import { Card, Link, Stack, Tab, TabList, Tabs, Typography } from '@portal/ds';
+import { Card, Link, Stack, Tab, TabList, Tabs, Typography } from '@portal-poc/ds';
 import { BookmarkToggle } from '@/features/toggle-bookmark';
 import { taskDetailsOptions, useRemoteHttp } from '@/shared/api';
 

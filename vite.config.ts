@@ -1,4 +1,4 @@
-import { createRemoteViteConfig } from '@portal/vite-config';
+import { createRemoteViteConfig } from '@portal-poc/vite-config';
 
 /**
  * DEMO ONLY: `DEMO_REQUIRE_ROUTER=^9.0.0` simulates a release built against a router major the host does not have yet

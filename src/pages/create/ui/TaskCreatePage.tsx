@@ -12,7 +12,7 @@ import {
   PendingRegion,
   Select,
   Stack,
-} from '@portal/ds';
+} from '@portal-poc/ds';
 import { createTaskInputSchema } from '@/shared/api';
 import type { CreateTaskInput } from '@/shared/api';
 import { useCreateTask } from '../api/use-create-task';

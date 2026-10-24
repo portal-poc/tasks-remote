@@ -1,4 +1,4 @@
-import { IconButton } from '@portal/ds';
+import { IconButton } from '@portal-poc/ds';
 import type { Task } from '@/shared/api';
 import { useToggleBookmark } from '../api/use-toggle-bookmark';
 

@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { z } from 'zod';
-import { usePlatformEvents } from '@portal/platform-runtime';
+import { usePlatformEvents } from '@portal-poc/platform-runtime';
 import { taskDetailsOptions, tasksKeys, useRemoteHttp } from '@/shared/api';
 import type { Task } from '@/shared/api';
 import { REMOTE_NAME } from '@/shared/config';

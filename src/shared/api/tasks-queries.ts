@@ -1,5 +1,5 @@
 import { queryOptions } from '@tanstack/react-query';
-import type { HttpClient } from '@portal/platform-runtime';
+import type { HttpClient } from '@portal-poc/platform-runtime';
 import { taskListSchema, taskSchema } from './contracts';
 import { tasksKeys } from './query-keys';
 import type { TaskFilters } from './query-keys';

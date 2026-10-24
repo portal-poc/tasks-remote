@@ -1,7 +1,7 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { useState, useTransition } from 'react';
 import { Link as RouterLink } from 'react-router';
-import { Button, Option, PendingRegion, Select, Stack } from '@portal/ds';
+import { Button, Option, PendingRegion, Select, Stack } from '@portal-poc/ds';
 import { DEFAULT_TASK_FILTERS, insertTaskFromColleague, tasksKeys } from '@/shared/api';
 import type { TaskFilters } from '@/shared/api';
 import { QueryBoundary } from '@/shared/ui';

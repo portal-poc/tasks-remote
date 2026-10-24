@@ -1,5 +1,5 @@
 import { Outlet, Route, Routes } from 'react-router';
-import { Stack, Typography } from '@portal/ds';
+import { Stack, Typography } from '@portal-poc/ds';
 import { TaskCreatePage } from '@/pages/create';
 import { TaskDetailsPage } from '@/pages/details';
 import { TaskListPage } from '@/pages/list';
