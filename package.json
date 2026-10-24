@@ -13,8 +13,7 @@
     "test": "vitest run",
     "verify": "portal-cli verify && portal-cli verify --dist dist-bridge --mode bridge",
     "analyze": "fallow",
-    "release:uat": "pnpm build && pnpm verify && portal-cli publish --nexus-dir ../../.infra/nexus && portal-cli release --stand uat --registry ../../registry && portal-cli registry build --stand uat --registry ../../registry --out ../../.infra/stands/uat/config.json",
-    "dev:in-uat": "echo \"Open http://localhost:4501/tasks?remote.tasks=http://localhost:5174/mf-manifest.json\" && vite --port 5174 --strictPort"
+    "release:uat": "pnpm build && pnpm verify && portal-cli publish --nexus-dir ../../.infra/nexus && portal-cli release --stand uat --registry ../../registry && portal-cli registry build --stand uat --registry ../../registry --out ../../.infra/stands/uat/config.json"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -36,8 +35,8 @@
     "@babel/core": "^8.0.9",
     "@feature-sliced/steiger-plugin": "^0.8.0",
     "@module-federation/vite": "^1.23.5",
-    "@portal/mf-shared": "workspace:^",
     "@portal/presets": "workspace:^",
+    "@portal/vite-config": "workspace:^",
     "@rolldown/plugin-babel": "^0.2.4",
     "@testing-library/react": "^16.3.3",
     "@types/react": "^19.3.0",
