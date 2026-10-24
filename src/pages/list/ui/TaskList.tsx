@@ -16,7 +16,7 @@ export const TaskList = ({ filters }: { filters: TaskFilters }) => {
   const tasks = useDeferredValue(data);
 
   if (tasks.length === 0) {
-    return <Typography level="body-sm">No tasks.</Typography>;
+    return <Typography level="body-sm">No tasks match the filter.</Typography>;
   }
   return (
     <List>
