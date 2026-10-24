@@ -9,6 +9,15 @@ const PORT = 5174;
 const REMOTE_NAME = 'tasks';
 
 /**
+ * DEMO ONLY: `DEMO_REQUIRE_ROUTER=^9.0.0` simulates a release built against a router major the host does not have yet
+ * (shows the CI gate, the registry gate and the host's runtime fallback to the bridge build). Not part of the template.
+ */
+const demoRouterRange = process.env['DEMO_REQUIRE_ROUTER'];
+const sharedConfig = demoRouterRange
+  ? { ...createSharedConfig(), 'react-router': { singleton: true as const, requiredVersion: demoRouterRange } }
+  : createSharedConfig();
+
+/**
  * Module Federation section = integration contract (name, exposes, shared). Everything else is internal.
  * `--mode bridge` builds the isolated variant (no shared deps, own React/router/DS) into `dist-bridge`.
  */
@@ -32,7 +41,7 @@ export default defineConfig(({ mode }) => ({
         [REMOTE_EXPOSES.runtime]: './src/app/exposes/runtime.ts',
         [REMOTE_EXPOSES.preload]: './src/app/exposes/preload.ts',
       },
-      shared: mode === 'bridge' ? {} : createSharedConfig(),
+      shared: mode === 'bridge' ? {} : sharedConfig,
     }),
   ],
 }));
