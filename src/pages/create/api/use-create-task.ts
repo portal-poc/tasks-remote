@@ -5,11 +5,16 @@ import { DEFAULT_TASK_FILTERS, http, taskSchema, tasksKeys, tasksListOptions } f
 import type { CreateTaskInput } from '@/shared/api';
 import { addTaskToList } from '../model/add-task-to-list';
 
+type CreateTaskOptions = {
+  /** Runs once the task is in the cache, instead of going to the list (e.g. continue a navigation the user started). */
+  onCreated?: () => Promise<void> | void;
+};
+
 /**
  * Create → redirect to a list that is being refetched: put the response into the list cache BEFORE navigating,
  * do not wait for invalidation. The mutation stays pending until navigation finishes (await navigate).
  */
-export const useCreateTask = () => {
+export const useCreateTask = ({ onCreated }: CreateTaskOptions = {}) => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -19,7 +24,7 @@ export const useCreateTask = () => {
       // Only where the record surely belongs (first page, default sort); everything else is invalidated.
       queryClient.setQueryData(tasksListOptions(DEFAULT_TASK_FILTERS).queryKey, (prev) => addTaskToList(prev, task));
       void queryClient.invalidateQueries({ queryKey: tasksKeys.lists() });
-      await navigate('..');
+      await (onCreated ? onCreated() : navigate('..'));
     },
   });
 };

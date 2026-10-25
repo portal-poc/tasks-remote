@@ -2,6 +2,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useState, useTransition } from 'react';
 import { Link as RouterLink } from 'react-router';
 import { Button, Option, PendingRegion, Select, Stack } from '@portal-poc/ds';
+import { usePageTitle } from '@portal-poc/platform-runtime';
 import { DEFAULT_TASK_FILTERS, insertTaskFromColleague, tasksKeys } from '@/shared/api';
 import type { TaskFilters } from '@/shared/api';
 import { QueryBoundary } from '@/shared/ui';
@@ -11,6 +12,7 @@ import { TaskList } from './TaskList';
 const STATUSES: TaskFilters['status'][] = ['all', 'todo', 'in-progress', 'done'];
 
 export const TaskListPage = () => {
+  usePageTitle('All tasks');
   const [filters, setFilters] = useState(DEFAULT_TASK_FILTERS);
   const [isPending, startTransition] = useTransition();
   const queryClient = useQueryClient();
