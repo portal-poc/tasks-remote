@@ -2,8 +2,9 @@ import type { CreateTaskInput, Task } from './contracts';
 
 /**
  * PoC stand-in for tasks-bff: a fake `fetch` injected into the real http client (bearer + zod still run).
- * Hard-coded data; delay from the host demo panel (`localStorage['portal.mock.delayMs']`).
- * Bookmarks live in localStorage so the host widget (host-bff stand-in) sees them too.
+ * Seed data; delay from the host demo panel (`localStorage['portal.mock.delayMs']`).
+ * Tasks and bookmarks live in localStorage (the "database"): the host widget (host-bff stand-in) reads the bookmarks,
+ * and both survive a reload — a bookmark never points at a task that vanished with the page.
  */
 type StoredTask = Omit<Task, 'bookmarked'>;
 
@@ -11,12 +12,42 @@ type StoredBookmark = { taskId: string; title: string; path: string };
 
 const DELAY_KEY = 'portal.mock.delayMs';
 const BOOKMARKS_KEY = 'portal.mock.bookmarks';
+const TASKS_KEY = 'portal.mock.tasks';
 
-const tasks: StoredTask[] = [
+const SEED_TASKS: StoredTask[] = [
   { id: '3', title: 'Review KYC escalation', description: 'Check documents of the flagged client.', status: 'in-progress', createdAt: '2026-10-20T09:00:00Z' },
   { id: '2', title: 'Approve credit limit change', description: 'Corporate client, +15%.', status: 'todo', createdAt: '2026-10-19T12:30:00Z' },
   { id: '1', title: 'Close quarterly report', description: 'Q3 numbers are final.', status: 'done', createdAt: '2026-10-18T08:15:00Z' },
 ];
+
+const readTasks = (): StoredTask[] => {
+  try {
+    const parsed: unknown = JSON.parse(localStorage.getItem(TASKS_KEY) ?? 'null');
+    return Array.isArray(parsed) ? (parsed as StoredTask[]) : SEED_TASKS;
+  } catch {
+    return SEED_TASKS;
+  }
+};
+
+/**
+ * First run with stored tasks: tasks created before were kept in memory only, so bookmarks to them point at nothing.
+ * Drop those once (the real BFF would never list a bookmark of a deleted task).
+ */
+const ensureDatabase = () => {
+  if (localStorage.getItem(TASKS_KEY) !== null) {
+    return;
+  }
+  localStorage.setItem(TASKS_KEY, JSON.stringify(SEED_TASKS));
+  const known = new Set(SEED_TASKS.map((task) => task.id));
+  for (const key of Object.keys(localStorage).filter((name) => name.startsWith(`${BOOKMARKS_KEY}.`))) {
+    const userId = key.slice(BOOKMARKS_KEY.length + 1);
+    writeBookmarks(userId, readBookmarks(userId).filter((bookmark) => known.has(bookmark.taskId)));
+  }
+};
+
+const addTask = (task: StoredTask) => {
+  localStorage.setItem(TASKS_KEY, JSON.stringify([task, ...readTasks()]));
+};
 
 const readDelay = (): number => {
   try {
@@ -74,17 +105,17 @@ const sleep = (ms: number, signal: AbortSignal | null | undefined) =>
 /** Simulates a task created by someone else (scenario 5: arrives through a background refetch). */
 export const insertTaskFromColleague = () => {
   const id = String(Date.now());
-  tasks.unshift({ id, title: `Colleague task #${id.slice(-4)}`, description: 'Created elsewhere.', status: 'todo', createdAt: new Date().toISOString() });
+  addTask({ id, title: `Colleague task #${id.slice(-4)}`, description: 'Created elsewhere.', status: 'todo', createdAt: new Date().toISOString() });
 };
 
 const createTask = (input: CreateTaskInput): StoredTask => {
   const task = { ...input, id: String(Date.now()), createdAt: new Date().toISOString() };
-  tasks.unshift(task);
+  addTask(task);
   return task;
 };
 
 const toggleBookmark = (userId: string, taskId: string, bookmarked: boolean) => {
-  const task = tasks.find((candidate) => candidate.id === taskId);
+  const task = readTasks().find((candidate) => candidate.id === taskId);
   const rest = readBookmarks(userId).filter((bookmark) => bookmark.taskId !== taskId);
   writeBookmarks(userId, bookmarked && task ? [...rest, { taskId, title: task.title, path: `/tasks/${taskId}` }] : rest);
 };
@@ -94,10 +125,10 @@ const route = async (method: string, url: URL, userId: string, body: unknown): P
   const [, resource, id] = url.pathname.replace(/^\/api/, '').split('/');
   if (resource === 'tasks' && method === 'GET' && !id) {
     const status = url.searchParams.get('status');
-    return json(tasks.filter((task) => !status || task.status === status).map(decorate));
+    return json(readTasks().filter((task) => !status || task.status === status).map(decorate));
   }
   if (resource === 'tasks' && method === 'GET' && id) {
-    const task = tasks.find((candidate) => candidate.id === id);
+    const task = readTasks().find((candidate) => candidate.id === id);
     return task ? json(decorate(task)) : json({ error: 'not found' }, 404);
   }
   if (resource === 'tasks' && method === 'POST') {
@@ -111,6 +142,7 @@ const route = async (method: string, url: URL, userId: string, body: unknown): P
 };
 
 export const fakeTasksFetch: typeof fetch = async (input, init) => {
+  ensureDatabase();
   const request = new Request(input, init);
   await sleep(readDelay(), init?.signal);
   const userId = readUserId(request.headers.get('authorization'));
