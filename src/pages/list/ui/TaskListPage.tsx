@@ -3,7 +3,8 @@ import { useState, useTransition } from 'react';
 import { Link as RouterLink } from 'react-router';
 import { Button, Option, PendingRegion, Select, Stack } from '@portal-poc/ds';
 import { usePageTitle } from '@portal-poc/platform-runtime';
-import { DEFAULT_TASK_FILTERS, insertTaskFromColleague, tasksKeys } from '@/shared/api';
+import { useRealtimeEvent } from '@portal-poc/realtime';
+import { DEFAULT_TASK_FILTERS, insertTaskFromColleague, realtime, tasksKeys } from '@/shared/api';
 import type { TaskFilters } from '@/shared/api';
 import { QueryBoundary } from '@/shared/ui';
 import { ForbiddenScopeDemo } from './ForbiddenScopeDemo';
@@ -26,10 +27,11 @@ export const TaskListPage = () => {
     }
   };
 
-  const simulateColleagueTask = () => {
-    insertTaskFromColleague();
+  // Subscribed while the list is on screen: a change anywhere (another user, another tab) refetches the list.
+  useRealtimeEvent(realtime, 'tasks', () => {
     void queryClient.invalidateQueries({ queryKey: tasksKeys.lists() });
-  };
+  });
+
 
   return (
     <Stack gap={2}>
@@ -44,7 +46,8 @@ export const TaskListPage = () => {
         <Button component={RouterLink} to="new">
           New task
         </Button>
-        <Button variant="plain" onClick={simulateColleagueTask}>
+        {/* The fake BFF pushes the new task to every subscribed socket: the realtime event refreshes the list. */}
+        <Button variant="plain" onClick={insertTaskFromColleague}>
           Simulate colleague's task
         </Button>
         <ForbiddenScopeDemo />

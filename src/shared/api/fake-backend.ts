@@ -1,4 +1,5 @@
 import type { CreateTaskInput, Task } from './contracts';
+import { publishTaskChanged } from './fake-realtime';
 
 /**
  * PoC stand-in for tasks-bff: a fake `fetch` injected into the real http client (bearer + zod still run).
@@ -102,15 +103,17 @@ const sleep = (ms: number, signal: AbortSignal | null | undefined) =>
     });
   });
 
-/** Simulates a task created by someone else (scenario 5: arrives through a background refetch). */
+/** Simulates a task created by someone else: the fake BFF pushes it to every subscribed socket (scenario 5). */
 export const insertTaskFromColleague = () => {
   const id = String(Date.now());
   addTask({ id, title: `Colleague task #${id.slice(-4)}`, description: 'Created elsewhere.', status: 'todo', createdAt: new Date().toISOString() });
+  publishTaskChanged(id);
 };
 
 const createTask = (input: CreateTaskInput): StoredTask => {
   const task = { ...input, id: String(Date.now()), createdAt: new Date().toISOString() };
   addTask(task);
+  publishTaskChanged(task.id);
   return task;
 };
 

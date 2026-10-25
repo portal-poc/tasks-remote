@@ -7,6 +7,8 @@ const remoteConfigSchema = z.object({
     z.string(),
     z.object({
       bffBaseUrl: z.url(),
+      /** The BFF's WebSocket endpoint (`@portal-poc/realtime`); same token scopes as the http client. */
+      realtimeUrl: z.url().optional(),
       scopes: z.array(z.string()).min(1),
     }),
   ),

@@ -1,10 +1,11 @@
-import { useSuspenseQuery } from '@tanstack/react-query';
+import { useQueryClient, useSuspenseQuery } from '@tanstack/react-query';
 import { Activity, useState, ViewTransition } from 'react';
 import { Link as RouterLink, useParams } from 'react-router';
 import { Card, Link, Stack, Tab, TabList, Tabs, Typography } from '@portal-poc/ds';
 import { usePageTitle } from '@portal-poc/platform-runtime';
+import { useRealtimeEvent } from '@portal-poc/realtime';
 import { BookmarkToggle } from '@/features/toggle-bookmark';
-import { taskDetailsOptions } from '@/shared/api';
+import { realtime, taskDetailsOptions } from '@/shared/api';
 
 type DetailsTab = 'overview' | 'history';
 
@@ -12,6 +13,11 @@ export const TaskDetailsPage = () => {
   const { taskId = '' } = useParams();
   const { data: task } = useSuspenseQuery(taskDetailsOptions(taskId));
   usePageTitle(task.title);
+  const queryClient = useQueryClient();
+  // Granular: only this task's topic, for as long as this page is open.
+  useRealtimeEvent(realtime, `task:${taskId}`, () => {
+    void queryClient.invalidateQueries({ queryKey: taskDetailsOptions(taskId).queryKey });
+  });
   const [tab, setTab] = useState<DetailsTab>('overview');
 
   const handleTabChange = (_event: unknown, value: string | number | null) => {

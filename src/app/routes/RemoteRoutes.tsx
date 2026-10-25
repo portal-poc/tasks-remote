@@ -1,13 +1,31 @@
 import { Outlet, Route, Routes } from 'react-router';
-import { Stack, Typography } from '@portal-poc/ds';
+import { Chip, Stack, Typography } from '@portal-poc/ds';
+import { useRealtimeSnapshot } from '@portal-poc/realtime';
 import { TaskCreatePage } from '@/pages/create';
 import { TaskDetailsPage } from '@/pages/details';
 import { TaskListPage } from '@/pages/list';
+import { realtime } from '@/shared/api';
 import { QueryBoundary } from '@/shared/ui';
+
+const STATE_COLOR = { idle: 'neutral', connecting: 'warning', open: 'success', reconnecting: 'warning' } as const;
+
+/** Our socket to tasks-bff: open only while a page subscribes, with exactly the topics pages asked for. */
+const RealtimeIndicator = () => {
+  const { state, topics } = useRealtimeSnapshot(realtime);
+  return (
+    <Chip size="sm" variant="soft" color={STATE_COLOR[state]}>
+      realtime: {state}
+      {topics.length > 0 ? ` · ${topics.join(', ')}` : ''}
+    </Chip>
+  );
+};
 
 const RemoteLayout = () => (
   <Stack gap={2} sx={{ p: 2 }}>
-    <Typography level="h3">Tasks</Typography>
+    <Stack direction="row" gap={2} alignItems="center">
+      <Typography level="h3">Tasks</Typography>
+      <RealtimeIndicator />
+    </Stack>
     <QueryBoundary>
       <Outlet />
     </QueryBoundary>

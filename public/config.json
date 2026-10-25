@@ -4,31 +4,36 @@
       "bffBaseUrl": "https://tasks-bff.local/api",
       "scopes": [
         "api://tasks-bff/Tasks.ReadWrite"
-      ]
+      ],
+      "realtimeUrl": "wss://tasks-bff.local/ws"
     },
     "dev3": {
       "bffBaseUrl": "https://tasks-bff.dev3.bank.example/api",
       "scopes": [
         "api://tasks-bff/Tasks.ReadWrite"
-      ]
+      ],
+      "realtimeUrl": "wss://tasks-bff.dev3.bank.example/ws"
     },
     "dev2": {
       "bffBaseUrl": "https://tasks-bff.dev2.bank.example/api",
       "scopes": [
         "api://tasks-bff/Tasks.ReadWrite"
-      ]
+      ],
+      "realtimeUrl": "wss://tasks-bff.dev2.bank.example/ws"
     },
     "dev1": {
       "bffBaseUrl": "https://tasks-bff.dev1.bank.example/api",
       "scopes": [
         "api://tasks-bff/Tasks.ReadWrite"
-      ]
+      ],
+      "realtimeUrl": "wss://tasks-bff.dev1.bank.example/ws"
     },
     "tst": {
       "bffBaseUrl": "https://tasks-bff.tst.bank.example/api",
       "scopes": [
         "api://tasks-bff/Tasks.ReadWrite"
-      ]
+      ],
+      "realtimeUrl": "wss://tasks-bff.tst.bank.example/ws"
     }
   }
 }
