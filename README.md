@@ -22,14 +22,16 @@ pnpm install
 pnpm dev:standalone     # :5174 — standalone app with mock platform
 ```
 
-## Release (PoC stands)
+## Deploy
+
+Nothing deploys by itself: **Actions → Deploy → Run workflow**, pick the stand and the branch or tag. Rules (checked
+before the build, see platform `docs/branching.md`): `dev3` takes any branch and is overwritten in place; `dev2` the
+newest `release/X.Y` or its tags, `dev1` the pilot line; `tst` only via "Promote" in the registry.
+
+Locally, against the PoC infra (the same command the pipeline runs):
 
 ```sh
-export PORTAL_NEXUS_DIR=~/projects/portal-poc/platform/.infra/nexus   # artifact store (Nexus stand-in)
-export PORTAL_REGISTRY_DIR=~/projects/portal-poc/registry             # clone of the registry repository
-PORTAL_APP_VERSION=1.4.1 pnpm release   # build → verify → publish → PR to the stands following this line
+export PORTAL_REGISTRY_DIR=~/projects/portal-poc/registry PORTAL_NEXUS_USER=poc PORTAL_NEXUS_PASSWORD=poc
+git checkout v1.5.2 && pnpm install
+pnpm dlx @portal-poc/cli@2 deploy --stand dev2   # tag → 1.5.2; release/1.5 → 1.5.3-rc.N; develop → dev3 only
 ```
-
-CI does the same (`app-ci.yml`): a `vX.Y.Z` tag on `release/X.Y` or a merge to `develop` (`X.Y.Z-dev.N`). Which
-stands get it is decided by the registry's `stands.json` (see platform `docs/branching.md`). Merge the registry PR,
-then deploy the stand configs from the registry repository (`pnpm deploy`).
