@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { bookmarksChanged, publishEvent } from '@portal-poc/events';
 import { CORRELATION_ID_HEADER } from '@portal-poc/http';
-import { usePlatformEvents } from '@portal-poc/platform-runtime';
+import { usePlatform } from '@portal-poc/platform-runtime';
 import { http, taskDetailsOptions, tasksKeys } from '@/shared/api';
 import type { Task } from '@/shared/api';
 import { REMOTE_NAME } from '@/shared/config';
@@ -12,7 +13,7 @@ const setBookmarked = (taskId: string, bookmarked: boolean) => (task: Task) =>
 
 export const useToggleBookmark = () => {
   const queryClient = useQueryClient();
-  const events = usePlatformEvents();
+  const platform = usePlatform();
 
   return useMutation({
     mutationFn: async ({ task, bookmarked }: ToggleVariables) => {
@@ -28,8 +29,8 @@ export const useToggleBookmark = () => {
       // Own UI: update the cache right away.
       queryClient.setQueriesData<Task[]>({ queryKey: tasksKeys.lists() }, (list) => list?.map(update));
       queryClient.setQueryData(taskDetailsOptions(taskId).queryKey, (task) => (task ? update(task) : task));
-      // Other apps (host bookmarks widget) react through the local platform bus.
-      events.emit('bookmarks.changed', { source: REMOTE_NAME, correlationId });
+      // Other apps (host bookmarks widget) react through the local platform bus: an event of the catalog, validated.
+      publishEvent(platform, bookmarksChanged, { source: REMOTE_NAME, correlationId });
     },
   });
 };

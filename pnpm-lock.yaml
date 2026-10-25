@@ -184,15 +184,18 @@ importers:
       '@portal-poc/ds':
         specifier: ^1.0.2
         version: 1.0.2(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(react@19.3.1))(@mui/joy@5.0.0-beta.52(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@portal-poc/events':
+        specifier: ^1.0.0
+        version: 1.0.0(zod@4.6.7)
       '@portal-poc/http':
         specifier: ^1.0.0
         version: 1.0.0(axios@1.20.0(debug@4.4.3))(zod@4.6.7)
       '@portal-poc/platform-contract':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.1.0
+        version: 1.1.0
       '@portal-poc/platform-runtime':
-        specifier: ^2.0.0
-        version: 2.0.0(@azure/msal-browser@5.26.0)(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: ^2.1.0
+        version: 2.1.0(@azure/msal-browser@5.26.0)(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@tanstack/react-query':
         specifier: ^5.104.5
         version: 5.104.5(@types/react@19.3.0)(react@19.3.1)
@@ -1100,6 +1103,11 @@ packages:
       react: ^19.3.0
       react-dom: ^19.3.0
 
+  '@portal-poc/events@1.0.0':
+    resolution: {integrity: sha512-ZS9NPgGiJf/JRYigZlD7kH3/ItF+7/6z8IFfprjvj46Z5//f+0aoQg3j1bEyx6iVhUfIjsc35hDuV27HTP3BtA==, tarball: https://npm.pkg.github.com/download/@portal-poc/events/1.0.0/aa88f70d9bda6709528785c695ec32dc455a7593}
+    peerDependencies:
+      zod: ^4.0.0
+
   '@portal-poc/http@1.0.0':
     resolution: {integrity: sha512-bFdmqx/L5wjm8jFahEUWlIC5dMNDhlWKArjC3eCDxU5p5P8+6ef+NpRlmKcbYIbuKRRoW//CNVmgV2pLX8pjqA==, tarball: https://npm.pkg.github.com/download/@portal-poc/http/1.0.0/284419a2ee076e10e206264019133426b51ac236}
     peerDependencies:
@@ -1109,11 +1117,11 @@ packages:
   '@portal-poc/mf-shared@1.0.0':
     resolution: {integrity: sha512-KA1EbI9y9LSNFU0hyB94QwDeG6lqXcfzS5fmmqQm2z1KHV4rBuoSVqyi+cDqcWQsuNiFeMq1IRdbiYeC4QaHrQ==, tarball: https://npm.pkg.github.com/download/@portal-poc/mf-shared/1.0.0/3e763312c2066fc157d67702bc5a6be574138d8f}
 
-  '@portal-poc/platform-contract@1.0.0':
-    resolution: {integrity: sha512-CdtSCN3LL/BEy4Bdp/0hyZ7imWZ9zssOVcO18hlFG5zM2hS8ho5B2iRRqXoYokrkxfsTOUmL8t0H8oypkLll7Q==, tarball: https://npm.pkg.github.com/download/@portal-poc/platform-contract/1.0.0/dd50f1bc9c11fcce03e84b48971772e9e9774472}
+  '@portal-poc/platform-contract@1.1.0':
+    resolution: {integrity: sha512-zUvgzmSzaR14c+pOWdJCronr/erCzxxbCgt2qeBFrVdrc/Xcmfadl59eKx/9Ow5Grodx4rwGXg5VeEk2gICLnQ==, tarball: https://npm.pkg.github.com/download/@portal-poc/platform-contract/1.1.0/305e8c664fd30144db38dadec21b7a43098b3778}
 
-  '@portal-poc/platform-runtime@2.0.0':
-    resolution: {integrity: sha512-n4uccGwBLZcp3YVRIPjhEF0ocdcd0qRV1yEtBQK+cUwGKMIomCnFSMm/cz7uCkZ9LYJbYiLp9haoTnijvPI+mQ==, tarball: https://npm.pkg.github.com/download/@portal-poc/platform-runtime/2.0.0/72c16a6708416d5964c03edf0ff388b088937214}
+  '@portal-poc/platform-runtime@2.1.0':
+    resolution: {integrity: sha512-Hr2PYbCOeGStkfI+YnHxmkkDAQtRpm7U3HQ9UTMhFPhuFR2HeJRl2x9ItSrM8+MejVN7fqPJkBqE2GBkf5WEnw==, tarball: https://npm.pkg.github.com/download/@portal-poc/platform-runtime/2.1.0/a2b3c9e6d18e71489ea654b221cfef867eb18bb1}
     peerDependencies:
       '@azure/msal-browser': ^5.0.0
       '@tanstack/react-query': ^5.104.0
@@ -3404,9 +3412,14 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
+  '@portal-poc/events@1.0.0(zod@4.6.7)':
+    dependencies:
+      '@portal-poc/platform-contract': 1.1.0
+      zod: 4.6.7
+
   '@portal-poc/http@1.0.0(axios@1.20.0(debug@4.4.3))(zod@4.6.7)':
     dependencies:
-      '@portal-poc/platform-contract': 1.0.0
+      '@portal-poc/platform-contract': 1.1.0
       axios: 1.20.0(debug@4.4.3)
       zod: 4.6.7
 
@@ -3414,12 +3427,12 @@ snapshots:
     dependencies:
       semver: 7.8.5
 
-  '@portal-poc/platform-contract@1.0.0': {}
+  '@portal-poc/platform-contract@1.1.0': {}
 
-  '@portal-poc/platform-runtime@2.0.0(@azure/msal-browser@5.26.0)(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@portal-poc/platform-runtime@2.1.0(@azure/msal-browser@5.26.0)(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@azure/msal-browser': 5.26.0
-      '@portal-poc/platform-contract': 1.0.0
+      '@portal-poc/platform-contract': 1.1.0
       '@tanstack/react-query': 5.104.5(@types/react@19.3.0)(react@19.3.1)
       '@tanstack/react-query-devtools': 5.104.5(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react@19.3.1)
       react: 19.3.1
