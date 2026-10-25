@@ -3,7 +3,7 @@ import { useDeferredValue, ViewTransition } from 'react';
 import { Link as RouterLink } from 'react-router';
 import { Chip, Link, List, ListItem, Typography } from '@portal-poc/ds';
 import { BookmarkToggle } from '@/features/toggle-bookmark';
-import { tasksListOptions, useRemoteHttp } from '@/shared/api';
+import { tasksListOptions } from '@/shared/api';
 import type { TaskFilters } from '@/shared/api';
 
 /**
@@ -11,8 +11,7 @@ import type { TaskFilters } from '@/shared/api';
  * `useDeferredValue` turns them into a transition, so new rows from a background refetch animate in.
  */
 export const TaskList = ({ filters }: { filters: TaskFilters }) => {
-  const http = useRemoteHttp();
-  const { data } = useSuspenseQuery(tasksListOptions(http, filters));
+  const { data } = useSuspenseQuery(tasksListOptions(filters));
   const tasks = useDeferredValue(data);
 
   if (tasks.length === 0) {

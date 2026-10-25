@@ -3,14 +3,13 @@ import { Activity, useState, ViewTransition } from 'react';
 import { Link as RouterLink, useParams } from 'react-router';
 import { Card, Link, Stack, Tab, TabList, Tabs, Typography } from '@portal-poc/ds';
 import { BookmarkToggle } from '@/features/toggle-bookmark';
-import { taskDetailsOptions, useRemoteHttp } from '@/shared/api';
+import { taskDetailsOptions } from '@/shared/api';
 
 type DetailsTab = 'overview' | 'history';
 
 export const TaskDetailsPage = () => {
   const { taskId = '' } = useParams();
-  const http = useRemoteHttp();
-  const { data: task } = useSuspenseQuery(taskDetailsOptions(http, taskId));
+  const { data: task } = useSuspenseQuery(taskDetailsOptions(taskId));
   const [tab, setTab] = useState<DetailsTab>('overview');
 
   const handleTabChange = (_event: unknown, value: string | number | null) => {

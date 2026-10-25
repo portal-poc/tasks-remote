@@ -1,6 +1,4 @@
-import { use } from 'react';
 import { z } from 'zod';
-import { usePlatformEnv } from '@portal-poc/platform-runtime';
 
 export const REMOTE_NAME = 'tasks';
 
@@ -14,9 +12,7 @@ const remoteConfigSchema = z.object({
   ),
 });
 
-export type RemoteEnvConfig = z.output<typeof remoteConfigSchema>['environments'][string];
-
-let configPromise: Promise<z.output<typeof remoteConfigSchema>> | null = null;
+type RemoteEnvConfig = z.output<typeof remoteConfigSchema>['environments'][string];
 
 /**
  * Runtime config: built once, deployed to any stand. `config.json` ships inside the remote's immutable version folder
@@ -25,34 +21,27 @@ let configPromise: Promise<z.output<typeof remoteConfigSchema>> | null = null;
  */
 const CONFIG_URL = import.meta.env.DEV ? '/config.json' : '../config.json';
 
-const loadRemoteConfig = () => {
-  if (!configPromise) {
-    const url = new URL(/* @vite-ignore */ CONFIG_URL, import.meta.url);
-    configPromise = fetch(url)
-      .then((response) => response.json())
-      .then((json: unknown) => remoteConfigSchema.parse(json));
+const loadEnvConfig = async (envName: string): Promise<RemoteEnvConfig> => {
+  const url = new URL(/* @vite-ignore */ CONFIG_URL, import.meta.url);
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`${REMOTE_NAME}: ${url.href} → HTTP ${response.status}`);
   }
-  return configPromise;
-};
-
-const getRemoteEnvConfig = async (envName: string): Promise<RemoteEnvConfig> => {
-  const config = await loadRemoteConfig();
-  const envConfig = config.environments[envName];
+  const envConfig = remoteConfigSchema.parse(await response.json()).environments[envName];
   if (!envConfig) {
     throw new Error(`${REMOTE_NAME}: no runtime config for environment "${envName}"`);
   }
   return envConfig;
 };
 
-const envConfigPromises = new Map<string, Promise<RemoteEnvConfig>>();
+const envConfigs = new Map<string, Promise<RemoteEnvConfig>>();
 
-/** Suspends until the runtime config is loaded. */
-export const useRemoteEnvConfig = (): RemoteEnvConfig => {
-  const { name } = usePlatformEnv();
-  let promise = envConfigPromises.get(name);
+/** The config of one environment (`platform.env.name`), loaded once. */
+export const getRemoteEnvConfig = (envName: string): Promise<RemoteEnvConfig> => {
+  let promise = envConfigs.get(envName);
   if (!promise) {
-    promise = getRemoteEnvConfig(name);
-    envConfigPromises.set(name, promise);
+    promise = loadEnvConfig(envName);
+    envConfigs.set(envName, promise);
   }
-  return use(promise);
+  return promise;
 };
