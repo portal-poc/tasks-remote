@@ -194,8 +194,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@portal-poc/platform-runtime':
-        specifier: ^2.2.1
-        version: 2.2.1(@azure/msal-browser@5.26.0)(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react-dom@19.3.1(react@19.3.1))(react-router@8.5.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
+        specifier: ^2.3.1
+        version: 2.3.1(@azure/msal-browser@5.26.0)(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react-dom@19.3.1(react@19.3.1))(react-router@8.5.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       '@portal-poc/realtime':
         specifier: ^1.0.0
         version: 1.0.0(react@19.3.1)
@@ -229,19 +229,19 @@ importers:
         version: 0.8.0(typescript@7.0.2)
       '@module-federation/vite':
         specifier: ^1.23.5
-        version: 1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5))
+        version: 1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       '@portal-poc/cli':
-        specifier: ^2.0.0
-        version: 2.0.0(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(@types/node@26.6.5)(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))
+        specifier: ^2.9.4
+        version: 2.9.4(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(@types/node@26.6.5)(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))
       '@portal-poc/presets':
-        specifier: ^1.0.4
-        version: 1.0.4(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))
+        specifier: ^1.0.5
+        version: 1.0.5(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))
       '@portal-poc/vite-config':
         specifier: ^1.3.0
-        version: 1.3.0(@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)))(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))
+        version: 1.3.0(@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       '@rolldown/plugin-babel':
         specifier: ^0.2.4
-        version: 0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5))
+        version: 0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       '@testing-library/react':
         specifier: ^16.3.3
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -256,7 +256,7 @@ importers:
         version: 19.3.0(@types/react@19.3.0)
       '@vitejs/plugin-react':
         specifier: ^6.1.2
-        version: 6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))
+        version: 6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       babel-plugin-react-compiler:
         specifier: ^1.0.0
         version: 1.0.0
@@ -277,10 +277,10 @@ importers:
         version: 7.0.2
       vite:
         specifier: ^8.3.5
-        version: 8.3.5(@types/node@26.6.5)
+        version: 8.3.5(@types/node@26.6.5)(yaml@2.9.1)
       vitest:
         specifier: ^5.0.5
-        version: 5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5))
+        version: 5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
 
 packages:
 
@@ -1093,8 +1093,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@portal-poc/cli@2.0.0':
-    resolution: {integrity: sha512-W1xxykYXXpJagF9eRH5CYPAYOV0bGmPU7b/3wNy3LaQFj98l8n/Nx1CToIGvo4SDbpGT5Bw9bGftH15KaXUZ5A==, tarball: https://npm.pkg.github.com/download/@portal-poc/cli/2.0.0/b3c2253f5472353dffa2fe395fc51fa3bf2afacd}
+  '@portal-poc/cli@2.9.4':
+    resolution: {integrity: sha512-8xMsP70IfIIK9mmW+ZyMMB3fp/X4wUUiNG4jOPP7hg9li+SPvOI24bgubjgBmUt20VjMOnLGXbNeSeigQLyeHw==, tarball: https://npm.pkg.github.com/download/@portal-poc/cli/2.9.4/ea9a53991284e6478a00b0f40cc807fe17ddb638}
     hasBin: true
 
   '@portal-poc/ds@1.1.0':
@@ -1123,8 +1123,8 @@ packages:
   '@portal-poc/platform-contract@1.2.0':
     resolution: {integrity: sha512-44slG1pCGt7LqAiBjfFePBwrYeLX3eMdZVvtbJKwSpIj/WUYVa5cEXhE9fTIHAhsA7as8v8tuLRxrJX7FgnwOg==, tarball: https://npm.pkg.github.com/download/@portal-poc/platform-contract/1.2.0/9801d22a1cffdd2fac3034b683980cea0f912df5}
 
-  '@portal-poc/platform-runtime@2.2.1':
-    resolution: {integrity: sha512-RGHJxjg1KZVu7GWlpYnu1Q0EwdZIGhtxyyQw2mznygzepaBvq8iR5BX3bpbDVnUIVHnQq1Ry6OF+1uosOSnMaA==, tarball: https://npm.pkg.github.com/download/@portal-poc/platform-runtime/2.2.1/bf1d814e89225669696d97f2955e8534f78a4748}
+  '@portal-poc/platform-runtime@2.3.1':
+    resolution: {integrity: sha512-yx4QWjLtR6+thgelT8Uf4sKXUkEPgl/eRuVjhe4cltMfTbweehxghx+N73J5GcpgH5O5YH0zafzpjm8/hNS+pw==, tarball: https://npm.pkg.github.com/download/@portal-poc/platform-runtime/2.3.1/739ede7149ada895305e1d21002e01d87ab03767}
     peerDependencies:
       '@azure/msal-browser': ^5.0.0
       '@tanstack/react-query': ^5.104.0
@@ -1132,8 +1132,8 @@ packages:
       react-dom: ^19.3.0
       react-router: ^8.5.0
 
-  '@portal-poc/presets@1.0.4':
-    resolution: {integrity: sha512-FELVPmvUHWyhB8QdrUaLuvH+OdHWzDqORksmnm9fGwlZRSobWQ0oZLFYdgPTynHvCsvkHGtUGz9GAVFhxvSgPA==, tarball: https://npm.pkg.github.com/download/@portal-poc/presets/1.0.4/7f5ff1137de4d874960bdb9a70c0391595594786}
+  '@portal-poc/presets@1.0.5':
+    resolution: {integrity: sha512-Fhicwr6cqR+zYeHBIwrSa6c2LAwv4nLaIF9wYTphXk0RuGE3HVaU5qxadxpkwHaS7dVSWJ3/p28uTcI5N3iXnQ==, tarball: https://npm.pkg.github.com/download/@portal-poc/presets/1.0.5/ffe553ad329f543821f1dfcba34a774733325148}
     peerDependencies:
       '@feature-sliced/steiger-plugin': ^0.8.0
       fallow: ^3.35.0
@@ -1396,6 +1396,9 @@ packages:
       '@types/react-dom':
         optional: true
 
+  '@ts-morph/common@0.29.0':
+    resolution: {integrity: sha512-35oUmphHbJvQ/+UTwFNme/t2p3FoKiGJ5auTjjpNTop2dyREspirjMy82PLSC1pnDJ8ah1GU98hwpVt64YXQsg==}
+
   '@types/aria-query@5.0.4':
     resolution: {integrity: sha512-rfT93uj5s0PRL7EzccGMs3brplhcrghnDoV26NqKhCAS1hVo+WdNsPvE/yb6ilfr5hi2MEk6d5EWJTKdxg8jVw==}
 
@@ -1624,6 +1627,10 @@ packages:
   babel-plugin-react-compiler@1.0.0:
     resolution: {integrity: sha512-Ixm8tFfoKKIPYdCCKYTsqv+Fd4IJ0DQqMyEimo+pxUOMUR9cVPlwTrFt9Avu+3cb6Zp3mAzl+t1MrG2fxxKsxw==}
 
+  balanced-match@4.0.4:
+    resolution: {integrity: sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==}
+    engines: {node: 18 || 20 || >=22}
+
   baseline-browser-mapping@2.11.31:
     resolution: {integrity: sha512-b0k7wXlWjpuL/Uxb/pYlpjY0ej5BjAmurtPUk3eRGuloI4yjK32m8TiKUQ81l1ptcLjKS/KH2+uqIolZti1x4Q==}
     engines: {node: '>=6.0.0'}
@@ -1631,6 +1638,10 @@ packages:
 
   bidi-js@1.1.0:
     resolution: {integrity: sha512-fX1Onk0tdVPC7obPWB5EbJ1z7NVhLq4m2xZLq2YXBkxzMXIGRpNMU88n0EPgWseKl12J7zXs7qrDxPK4sRs2fg==}
+
+  brace-expansion@5.0.12:
+    resolution: {integrity: sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ==}
+    engines: {node: 20 || >=22}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -1674,6 +1685,9 @@ packages:
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
+
+  code-block-writer@13.0.3:
+    resolution: {integrity: sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==}
 
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -1745,6 +1759,10 @@ packages:
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
+
+  diff@9.0.0:
+    resolution: {integrity: sha512-svtcdpS8CgJyqAjEQIXdb3OjhFVVYjzGAPO8WGCmRbrml64SPw/jJD4GoE98aR7r25A0XcgrK3F02yw9R/vhQw==}
+    engines: {node: '>=0.3.1'}
 
   dom-accessibility-api@0.5.16:
     resolution: {integrity: sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg==}
@@ -2146,6 +2164,10 @@ packages:
     resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
     engines: {node: '>= 0.6'}
 
+  minimatch@10.2.6:
+    resolution: {integrity: sha512-vpLQEs+VLCr1nU0BXS07maYoFwlDAH0gngQuuttxIwutDFEMHq2blX+8vpgxDdK3J1PwjCJiep77OitTZ4Ll1A==}
+    engines: {node: 18 || 20 || >=22}
+
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -2193,6 +2215,9 @@ packages:
 
   parse5@8.0.1:
     resolution: {integrity: sha512-z1e/HMG90obSGeidlli3hj7cbocou0/wa5HacvI3ASx34PecNjNQeaHNo5WIZpWofN9kgkqV1q5YvXe3F0FoPw==}
+
+  path-browserify@1.0.1:
+    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
 
   path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
@@ -2457,6 +2482,9 @@ packages:
     resolution: {integrity: sha512-BcDSDW+SIGWVOns1Zm6Yg91q9AEj7eaID0QDY9oIqJD1A8dscNwMcl9Sms2DeuWCNov1X0/oXanHGYQBSLwZsg==}
     engines: {node: ^22.14.0 || >=24.0.0}
 
+  ts-morph@28.0.0:
+    resolution: {integrity: sha512-Wp3tnZ2bzwxyTZMtgWVzXDfm7lB1Drz+y9DmmYH/L702PQhPyVrp3pkou3yIz4qjS14GY9kcpmLiOOMvl8oG1g==}
+
   tsconfck@3.1.6:
     resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
     engines: {node: ^18 || >=20}
@@ -2644,6 +2672,11 @@ packages:
   yaml@1.10.3:
     resolution: {integrity: sha512-vIYeF1u3CjlhAFekPPAk2h/Kv4T3mAkMox5OymRiJQB0spDP10LHvt+K7G9Ny6NuuMAb25/6n1qyUjAcGNf/AA==}
     engines: {node: '>= 6'}
+
+  yaml@2.9.1:
+    resolution: {integrity: sha512-3NxN8+78OdzbT7C/WjGsyfPAtJaN3FNDsWxv7Y7mcDsT/oOmgW8BpyQQFFBnvZE3j9Y2Sdz1ULFLezL7Eb2yFw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
 
   yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
@@ -3225,12 +3258,12 @@ snapshots:
 
   '@module-federation/third-party-dts-extractor@2.9.2': {}
 
-  '@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5))':
+  '@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))':
     dependencies:
       '@module-federation/dts-plugin': 2.9.2(typescript@7.0.2)
       '@module-federation/runtime': 2.9.2
       '@module-federation/sdk': 2.9.2
-      vite: 8.3.5(@types/node@26.6.5)
+      vite: 8.3.5(@types/node@26.6.5)(yaml@2.9.1)
     transitivePeerDependencies:
       - bufferutil
       - typescript
@@ -3396,13 +3429,16 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@portal-poc/cli@2.0.0(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(@types/node@26.6.5)(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))':
+  '@portal-poc/cli@2.9.4(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(@types/node@26.6.5)(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))':
     dependencies:
       '@inquirer/prompts': 8.7.4(@types/node@26.6.5)
       '@portal-poc/mf-shared': 1.0.0
-      '@portal-poc/presets': 1.0.4(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))
+      '@portal-poc/presets': 1.0.5(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))
       commander: 15.0.0
+      diff: 9.0.0
       semver: 7.8.5
+      ts-morph: 28.0.0
+      yaml: 2.9.1
     transitivePeerDependencies:
       - '@feature-sliced/steiger-plugin'
       - '@types/node'
@@ -3438,7 +3474,7 @@ snapshots:
 
   '@portal-poc/platform-contract@1.2.0': {}
 
-  '@portal-poc/platform-runtime@2.2.1(@azure/msal-browser@5.26.0)(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react-dom@19.3.1(react@19.3.1))(react-router@8.5.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)':
+  '@portal-poc/platform-runtime@2.3.1(@azure/msal-browser@5.26.0)(@tanstack/react-query@5.104.5(@types/react@19.3.0)(react@19.3.1))(@types/react@19.3.0)(csstype@3.2.3)(react-dom@19.3.1(react@19.3.1))(react-router@8.5.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@azure/msal-browser': 5.26.0
       '@portal-poc/platform-contract': 1.2.0
@@ -3451,27 +3487,27 @@ snapshots:
       - '@types/react'
       - csstype
 
-  '@portal-poc/presets@1.0.4(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)))':
+  '@portal-poc/presets@1.0.5(@feature-sliced/steiger-plugin@0.8.0(typescript@7.0.2))(fallow@3.35.0)(steiger@0.8.0(typescript@7.0.2))(vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))':
     dependencies:
       '@feature-sliced/steiger-plugin': 0.8.0(typescript@7.0.2)
       fallow: 3.35.0
       steiger: 0.8.0(typescript@7.0.2)
-      vitest: 5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5))
+      vitest: 5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
 
   '@portal-poc/realtime@1.0.0(react@19.3.1)':
     dependencies:
       '@portal-poc/platform-contract': 1.2.0
       react: 19.3.1
 
-  '@portal-poc/vite-config@1.3.0(@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)))(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))':
+  '@portal-poc/vite-config@1.3.0(@module-federation/vite@1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))':
     dependencies:
-      '@module-federation/vite': 1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5))
+      '@module-federation/vite': 1.23.5(typescript@7.0.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       '@portal-poc/mf-shared': 1.0.0
-      '@rolldown/plugin-babel': 0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5))
-      '@vitejs/plugin-react': 6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))
+      '@rolldown/plugin-babel': 0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
+      '@vitejs/plugin-react': 6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       babel-plugin-react-compiler: 1.0.0
       semver: 7.8.5
-      vite: 8.3.5(@types/node@26.6.5)
+      vite: 8.3.5(@types/node@26.6.5)(yaml@2.9.1)
 
   '@remix-run/route-pattern@0.22.1': {}
 
@@ -3520,14 +3556,14 @@ snapshots:
   '@rolldown/binding-win32-x64-msvc@1.2.15':
     optional: true
 
-  '@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5))':
+  '@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))':
     dependencies:
       '@babel/core': 8.0.9
       picomatch: 4.0.7
       rolldown: 1.2.15
     optionalDependencies:
       '@babel/runtime': 7.29.10
-      vite: 8.3.5(@types/node@26.6.5)
+      vite: 8.3.5(@types/node@26.6.5)(yaml@2.9.1)
 
   '@rolldown/pluginutils@1.0.1': {}
 
@@ -3667,6 +3703,12 @@ snapshots:
       '@types/react': 19.3.0
       '@types/react-dom': 19.3.0(@types/react@19.3.0)
 
+  '@ts-morph/common@0.29.0':
+    dependencies:
+      minimatch: 10.2.6
+      path-browserify: 1.0.1
+      tinyglobby: 0.2.17
+
   '@types/aria-query@5.0.4': {}
 
   '@types/chai@5.2.3':
@@ -3758,22 +3800,22 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5))':
+  '@vitejs/plugin-react@6.1.2(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.3.5(@types/node@26.6.5)
+      vite: 8.3.5(@types/node@26.6.5)(yaml@2.9.1)
     optionalDependencies:
-      '@rolldown/plugin-babel': 0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5))
+      '@rolldown/plugin-babel': 0.2.4(@babel/core@8.0.9)(@babel/runtime@7.29.10)(rolldown@1.2.15)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       babel-plugin-react-compiler: 1.0.0
 
-  '@vitest/mocker@5.0.5(vite@8.3.5(@types/node@26.6.5))':
+  '@vitest/mocker@5.0.5(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@vitest/spy': 5.0.5
       estree-walker: 3.0.3
       magic-string: 1.4.3
     optionalDependencies:
-      vite: 8.3.5(@types/node@26.6.5)
+      vite: 8.3.5(@types/node@26.6.5)(yaml@2.9.1)
 
   '@vitest/spy@5.0.5': {}
 
@@ -3823,11 +3865,17 @@ snapshots:
     dependencies:
       '@babel/types': 7.29.8
 
+  balanced-match@4.0.4: {}
+
   baseline-browser-mapping@2.11.31: {}
 
   bidi-js@1.1.0:
     dependencies:
       require-from-string: 2.0.2
+
+  brace-expansion@5.0.12:
+    dependencies:
+      balanced-match: 4.0.4
 
   braces@3.0.3:
     dependencies:
@@ -3867,6 +3915,8 @@ snapshots:
       wrap-ansi: 7.0.0
 
   clsx@2.1.1: {}
+
+  code-block-writer@13.0.3: {}
 
   color-convert@2.0.1:
     dependencies:
@@ -3926,6 +3976,8 @@ snapshots:
   dequal@2.0.3: {}
 
   detect-libc@2.1.2: {}
+
+  diff@9.0.0: {}
 
   dom-accessibility-api@0.5.16: {}
 
@@ -4281,6 +4333,10 @@ snapshots:
     dependencies:
       mime-db: 1.52.0
 
+  minimatch@10.2.6:
+    dependencies:
+      brace-expansion: 5.0.12
+
   ms@2.1.3: {}
 
   mute-stream@3.0.0: {}
@@ -4329,6 +4385,8 @@ snapshots:
   parse5@8.0.1:
     dependencies:
       entities: 8.1.0
+
+  path-browserify@1.0.1: {}
 
   path-parse@1.0.7: {}
 
@@ -4567,6 +4625,11 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
+  ts-morph@28.0.0:
+    dependencies:
+      '@ts-morph/common': 0.29.0
+      code-block-writer: 13.0.3
+
   tsconfck@3.1.6(typescript@7.0.2):
     optionalDependencies:
       typescript: 7.0.2
@@ -4614,7 +4677,7 @@ snapshots:
 
   verkit@0.5.0: {}
 
-  vite@8.3.5(@types/node@26.6.5):
+  vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -4624,11 +4687,12 @@ snapshots:
     optionalDependencies:
       '@types/node': 26.6.5
       fsevents: 2.3.3
+      yaml: 2.9.1
 
-  vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)):
+  vitest@5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.0.5(vite@8.3.5(@types/node@26.6.5))
+      '@vitest/mocker': 5.0.5(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       chai: 6.3.0
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
@@ -4639,7 +4703,7 @@ snapshots:
       tinybench: 6.2.2
       tinyexec: 1.3.1
       tinyglobby: 0.2.17
-      vite: 8.3.5(@types/node@26.6.5)
+      vite: 8.3.5(@types/node@26.6.5)(yaml@2.9.1)
       why-is-node-running: 3.2.1
     optionalDependencies:
       '@types/node': 26.6.5
@@ -4682,6 +4746,8 @@ snapshots:
   y18n@5.0.8: {}
 
   yaml@1.10.3: {}
+
+  yaml@2.9.1: {}
 
   yargs-parser@21.1.1: {}
 
