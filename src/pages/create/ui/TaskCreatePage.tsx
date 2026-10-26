@@ -52,8 +52,8 @@ export const TaskCreatePage = () => {
     },
   });
   // Three levels of the same guard API: our own dialog while dirty, a lock while saving.
-  const unsaved = useLeaveGuard(form.formState.isDirty, { dialog: 'own', message: 'The new task is not saved.' });
-  const saving = useLeaveGuard(createTask.isPending, { lock: true, message: 'The task is being saved…' });
+  const unsaved = useLeaveGuard({ when: form.formState.isDirty, dialog: 'own', message: 'The new task is not saved.' });
+  const saving = useLeaveGuard({ when: createTask.isPending, lock: true, message: 'The task is being saved…' });
 
   const navigation = useNavigation();
   // One flag for all stages: otherwise in the cold case the button "goes out" on 200 while the page has not changed.
